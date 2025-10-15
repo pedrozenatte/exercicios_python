@@ -36,3 +36,10 @@ print('Data:', dia + '/' + mes + '/' + ano)
 
 # Desafio 03
 # Crie um script que leia dois números e mostre a soma entre eles
+n1 = input('Digite um número: ')
+n2 = input('Digite outro número: ')
+
+print('A soma vale:', n1 + n2)
+# O input() considera qualquer coisa que entrar como str
+
+# Só na aula 002 e resolvido o problema
