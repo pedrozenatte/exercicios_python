@@ -338,3 +338,48 @@ math.sqrt(16)
 - Em Python, __init__.py ajuda a definir a API de pacotes
 """
 # API é o “jeito certo” de usar um código, sem saber como ele funciona por dentro.
+
+
+
+###############################################################
+###############################################################
+
+"""
+Em python, não dá para "inibir de verdade" que alguém acesse funções de um módulo que deveriam ser privadas, por exemplo:
+Tenho um pacote cadastrar com o módulo cadastro. Nesse módulo, existem 4 funções, duas
+funções são as que eu gostaria que o usuário utilizasse (principais), mas duas delas são
+apenas funções auxiliares para as duas principais. Para "omitir" as auxiliares, no
+__init__.py, é colocado: 
+"""
+
+# API para cadastrar
+
+# from ._cadastro import casdastrar
+# from ._cadastro import lerArquivo
+
+"""
+Porém, quando o usuário importa o pacote, por exemplo: import cadastrar
+ele vai poder fazer cadastrar.func1 ou cadastrar.func2, e nesse caso ele não tem acesso 
+ao cadastrar.func3 nem cadastrar.func4 (considerando func3 e func4 as funções aux)
+PORÉM, a IDE (como o VSCode) fica sugerindo ao usuário de primeira utilizar cadastrar
+cadastro para acessar todas as funções possíveis (func1, 2, 3 e 4).
+Para evitar isso, pois não tem como evitar o usuário de acessar cadastrar.cadastro, 
+coloque o nome do módulo com um underscore (_modulo.py), por exemplo, _cadastro.py
+e no __init__.py coloque:
+"""
+
+# from .cadastro import func1, func2
+
+__all__ = ["func1", "func2"]  
+
+# por exemplo 
+
+# EXEMPLO: 
+#from .cadastro import cadastrar, lerArquivo
+
+__all__ = ["cadastrar", "lerArquivo"]
+
+"""
+Além disso, deixe funções internas com _ também isso ajuda as IDEs a sugerirem só 
+o que está em __all__.
+"""
