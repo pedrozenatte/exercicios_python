@@ -1,4 +1,5 @@
 # Python é uma linguagem de alto nível, o que significa que é otimizado para que as pessoas, ao invés das máquinas, possam ler.
+# Diferente de outras linguagens, como C, Python não utiliza o padrão ASCII (8 bits) e sim UTF-8 (Unicode - 8 a 32 bits), pois pode se representar emojis, acentuação... etc. 
 
 # Só pra não dar azar
 print('Olá, Mundo!')
