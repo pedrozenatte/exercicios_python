@@ -89,4 +89,7 @@ brasil.append(estado.copy()) # Também é possível fazer isso na lista
 # OBS: Se fizermos x = {'Alface', 'Abacate', 'Laranja'}, isso configura um SET, e um set não é um dicionário. 
 # Sets não possuem ordem definida, então ao printar, teremos um resultado não determinístico
 
+# MAS POR QUE QUANDO RODAMOS O SET EM UM IPYNB SEMPRE HÁ A MESMA ORDEM? 
+# R: Por que o set é implementado como uma tabela hash, então se estamos em um mesmo processo, uma vez definida as chaves da tabela, sempre serão as mesmas durante todo o processo. Quando executamos um ipynb, o código roda dentro de um kernel, que, nesse contexto, é um processo Python persistente. Enquanto esse kernel permanece ativo, a seed de hash e a estrutura interna do set permanecem as mesmas, fazendo com que o print(set) pareça determinístico, sempre exibindo os elementos na mesma ordem durante aquela sessão. Ao fechar o notebook ou reiniciar o kernel — ou ao executar um script .py, que cria um novo processo Python a cada execução — uma nova seed de hash é utilizada e a tabela interna do set pode ser reorganizada. Por isso, a ordem de impressão pode mudar entre execuções, mesmo que os dados sejam os mesmos.
+
 # Você pode utilizar fstrigs dentro do dicionário, como no exercício 91
