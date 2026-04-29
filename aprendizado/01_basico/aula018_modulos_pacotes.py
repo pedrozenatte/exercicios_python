@@ -215,6 +215,43 @@ Ocultação de código detalhado
 Reutilização em outros projetos
 """
 
+# =====================================================
+# EXECUTANDO PACOTES E MÓDULOS
+# =====================================================
+
+"""
+Para executar um módulo dentro de um pacote, usamos:
+
+python -m pacote.modulo
+
+Exemplo:
+
+python3 -m ex02.ex02
+
+Isso faz o Python entender corretamente a estrutura
+de pacotes e resolver imports entre módulos.
+"""
+
+"""
+Estrutura:
+
+projeto/
+├── ex01/
+│   ├── __init__.py
+│   └── ex01.py
+├── ex02/
+│   ├── __init__.py
+│   └── ex02.py
+
+Dentro de ex02.py:
+
+from ex01.ex01 import MinhaClasse
+"""
+
+"""
+IMPORTANTE:
+O comando deve ser executado na pasta raiz do projeto.
+"""
 
 
 
