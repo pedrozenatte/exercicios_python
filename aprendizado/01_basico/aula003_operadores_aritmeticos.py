@@ -1,6 +1,6 @@
 # Operadores Aritméticos
 
-# Operadores novos: "//" é divisão de potência e "**" é potência
+# Operadores novos: "//" é divisão inteira "**" é potência
 
 n1 = int(input('Digite um valor: '))
 n2 = int(input('Digite outro valor: '))
